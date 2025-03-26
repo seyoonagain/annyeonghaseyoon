@@ -1,17 +1,24 @@
+@import url('https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css');
 @import 'tailwindcss';
 
 @utility stroke {
-  -webkit-text-stroke: 0.7px #000000;
-  text-stroke: 0.7px #000000;
+  -webkit-text-stroke: 1px #000000;
+  text-stroke: 1px #000000;
 }
 
 @theme {
   --color-primary: '#beff2e';
   --color-secondary: '#e6ffb0';
   --color-butter: '#faecaf';
-  --drop-shadow-px: '1px 1px 0 #000000';
-  --drop-shadow-2: '2px 2px 0 #000000';
-  --drop-shadow-4: '4px 4px 0 #000000';
+  --drop-shadow-px: 1px 1px 0 #000000;
+  --drop-shadow-2: 2px 2px 0 #000000;
+  --drop-shadow-4: 4px 4px 0 #000000;
   --tracking-tighter: -0.075em;
   --tracking-tightest: -0.1em;
+  --tracking-tightest-ko: -0.2em;
+  --font-galmuri7: 'Galmuri7';
+}
+
+.border {
+  @apply border-zinc-950;
 }
