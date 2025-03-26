@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@assets/*": ["./public/assets/*"],
       "@layout": ["./src/components/layout"],
       "@post": ["./src/components/post"],
       "@styles/*": ["./src/styles/*"]
