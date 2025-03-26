@@ -1,14 +1,29 @@
-export default function Home() {
+'use client';
+
+import { Button, Title } from '@/components/home';
+import { motion } from 'framer-motion';
+
+const Home = () => {
   return (
-    <section className="flex flex-col items-center leading-tight md:gap-2">
-      <h1 className="flex items-center text-6xl md:text-7xl lg:text-9xl font-light tracking-tightest">
-        <span>Annyeongha</span>
-        <span className="font-bold text-white stroke">seyoon</span>
-        <span>.</span>
-      </h1>
-      <p className="flex items-center font-light text-base lg:text-xl tracking-tightest">
-        <span className="-mt-1 md:-mt-3 lg:mt-0">/안녕하세윤/</span>
-      </p>
-    </section>
+    <div className="flex flex-col justify-center items-center gap-8 h-full">
+      <motion.div
+        className="fixed top-0 z-50 w-full bg-yellow-200 border-b"
+        initial={{ height: '100dvh' }}
+        animate={{ height: '56px' }}
+        transition={{
+          delay: 0.5,
+          duration: 1,
+          ease: 'easeInOut',
+          type: 'spring',
+          stiffness: 80,
+          damping: 5,
+          mass: 1,
+        }}
+      />
+      <Title />
+      <Button />
+    </div>
   );
-}
+};
+
+export default Home;
