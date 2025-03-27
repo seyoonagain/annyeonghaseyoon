@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Title } from '@/components/home';
+import { Enter, Title } from '@/components/home';
 import { motion } from 'framer-motion';
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
         }}
       />
       <Title />
-      <Button />
+      <Enter />
     </div>
   );
 };

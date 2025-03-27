@@ -1,2 +1,2 @@
-export { Enter as Button } from './enter';
+export { Enter } from './enter';
 export { Title } from './title';
