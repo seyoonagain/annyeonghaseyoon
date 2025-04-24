@@ -4,13 +4,15 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Menu } from '@/components/layout/menu';
 import { MENU } from '@/lib/constants';
+import useIsInit from '@/hooks/useIsInit';
 
 export const Header = () => {
+  const { isInit } = useIsInit();
   const pathname = usePathname();
 
-  if (pathname.includes('posts')) return null;
+  if (!isInit || pathname.includes('posts')) return null;
 
-  const currentMenu = MENU.find(({ path }) => path === pathname).option;
+  const currentMenu = MENU.find(({ path }) => path === pathname)?.option ?? 'Not Found';
 
   const removeFirstO = (string: string) => [
     string.slice(0, string.indexOf('o')),
@@ -19,9 +21,9 @@ export const Header = () => {
 
   return (
     <header className="fixed top-0 z-50 w-full select-none">
-      <Menu />
+      {currentMenu !== 'Not Found' && <Menu />}
 
-      <h1 className="flex absolute top-2 right-2 text-6xl sm:text-7xl font-manrope font-light text-black tracking-tighter">
+      <h1 className="flex absolute top-2 right-2 text-6xl sm:text-7xl font-manrope font-light tracking-tighter">
         <span>{removeFirstO(currentMenu)[0]}</span>
         <motion.span
           className={`z-10 text-white stroke-light -translate-x-0.5`}
