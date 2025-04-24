@@ -1,38 +1,46 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { TypeAnimation } from 'react-type-animation';
-import Link from 'next/link';
-import { MENUS } from '@/lib/constants';
-import { Menu } from '@/components/common';
-
-const TITLE_STYLE = 'w-28 font-light text-2xl italic tracking-tighter';
+import { motion } from 'framer-motion';
+import { Menu } from '@/components/layout/menu';
+import { MENU } from '@/lib/constants';
 
 export const Header = () => {
   const pathname = usePathname();
 
-  if (pathname === '/') return null;
+  if (pathname.includes('posts')) return null;
+
+  const currentMenu = MENU.find(({ path }) => path === pathname).option;
+
+  const removeFirstO = (string: string) => [
+    string.slice(0, string.indexOf('o')),
+    string.slice(string.indexOf('o') + 1),
+  ];
 
   return (
-    <header className="flex items-center gap-8 fixed top-0 z-50 w-full h-14 px-2 border-b bg-yellow-200 text-zinc-950">
-      <Link href="/home" className="hover:underline">
-        {pathname === '/home' && (
-          <TypeAnimation
-            sequence={['', 500, '안녕하', 300, '안녕하세윤.']}
-            className={TITLE_STYLE}
-            wrapper="p"
-            speed={10}
-            repeat={0}
-          />
-        )}
-        {pathname !== '/home' && <p className={TITLE_STYLE}>안녕하세윤.</p>}
-      </Link>
+    <header className="fixed top-0 z-50 w-full select-none">
+      <Menu />
 
-      <div className="flex items-center gap-4">
-        {MENUS.map(menu => (
-          <Menu key={menu.title} menu={menu} />
-        ))}
-      </div>
+      <h1 className="flex absolute top-2 right-2 text-6xl sm:text-7xl font-manrope font-light text-black tracking-tighter">
+        <span>{removeFirstO(currentMenu)[0]}</span>
+        <motion.span
+          className={`z-10 text-white stroke-light -translate-x-0.5`}
+          animate={{
+            rotateX: [0, 5, -5, 0],
+            rotateY: [0, 200, -200, 0],
+            rotateZ: [0, 10, -10, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            repeatType: 'mirror',
+            ease: 'easeInOut',
+          }}
+        >
+          o
+        </motion.span>
+        <span className="-translate-x-1.5">{removeFirstO(currentMenu)[1]}</span>
+      </h1>
     </header>
   );
 };

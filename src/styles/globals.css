@@ -1,24 +1,82 @@
-@import url('https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css');
+/* @import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Special+Gothic+Expanded+One&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Manrope:wght@200..800&family=Special+Gothic+Expanded+One&display=swap');
 @import 'tailwindcss';
 
-@utility stroke {
+@utility stroke-px {
   -webkit-text-stroke: 1px #000000;
   text-stroke: 1px #000000;
 }
 
+@utility stroke-light {
+  -webkit-text-stroke: 0.75px #000000;
+  text-stroke: 0.75px #000000;
+}
+
+@utility text-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+@utility text-horizontal {
+  writing-mode: horizontal-tb;
+  transform: rotate(0deg);
+}
+
 @theme {
-  --color-primary: '#beff2e';
-  --color-secondary: '#e6ffb0';
-  --color-butter: '#faecaf';
+  --color-primary: #beff2e;
+  --color-secondary: #e6ffb0;
+  --color-butter: #faecaf;
   --drop-shadow-px: 1px 1px 0 #000000;
   --drop-shadow-2: 2px 2px 0 #000000;
   --drop-shadow-4: 4px 4px 0 #000000;
+  --drop-shadow-card: 10px 30px 15px #aaaaaa;
   --tracking-tighter: -0.075em;
   --tracking-tightest: -0.1em;
   --tracking-tightest-ko: -0.2em;
-  --font-galmuri7: 'Galmuri7';
+  --font-gothic: 'Special Gothic Expanded One';
+  --font-gruppo: 'Gruppo';
+  --font-manrope: 'Manrope';
+
+  --animate-colorShift: colorShift 7s ease-in-out infinite;
+  @keyframes colorShift {
+    0%,
+    100% {
+      background: #c98f98;
+    }
+    90% {
+      background: #af95c2;
+    }
+    80% {
+      background: #95a9c2;
+    }
+    70% {
+      background: #c3d986;
+    }
+    60% {
+      background: #9bbfb9;
+    }
+    50% {
+      background: #a8bf9b;
+    }
+    40% {
+      background: #8ac2d4;
+    }
+    30% {
+      background: #9ba4e0;
+    }
+    20% {
+      background: #b49bcc;
+    }
+    10% {
+      background: #d49bbd;
+    }
+  }
 }
 
 .border {
   @apply border-zinc-950;
+}
+
+button {
+  @apply cursor-pointer;
 }

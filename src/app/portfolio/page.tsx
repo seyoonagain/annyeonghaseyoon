@@ -1,7 +1,9 @@
+'use client';
+
 import { NotReady } from '@/components/common';
 
-const Guestbook = () => {
+const Portfolio = () => {
   return <NotReady />;
 };
 
-export default Guestbook;
+export default Portfolio;

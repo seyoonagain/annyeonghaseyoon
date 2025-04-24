@@ -1,7 +1,6 @@
-import { MenuItem } from '@/components/common/menu';
-
-export const MENUS: MenuItem[] = [
-  { title: 'posts.', href: '/posts', target: '_self' },
-  { title: 'guestbook.', href: '/guestbook', target: '_self' },
-  { title: 'github↗', href: 'https://github.com/seyoonagain', target: '_blank' },
+export const MENU = [
+  { option: 'Home', path: '/' },
+  { option: 'Portfolio', path: '/portfolio' },
+  { option: 'Blog', path: '/blog' },
+  { option: 'Guestbook', path: '/guestbook' },
 ];

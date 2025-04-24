@@ -1,0 +1,27 @@
+'use client';
+
+import { MENU } from '@/lib/constants';
+import { usePathname, useRouter } from 'next/navigation';
+import { twMerge } from 'tailwind-merge';
+
+export const Menu = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  return (
+    <div className="flex items-start absolute top-2 left-2">
+      {MENU.filter(({ path }) => path !== pathname).map(({ option, path }) => (
+        <button
+          key={option}
+          // style={{ fontSize, width }}
+          onClick={() => router.push(path)}
+          className={twMerge(
+            'text-3xl sm:text-5xl text-vertical font-manrope font-thin tracking-tighter',
+          )}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+};

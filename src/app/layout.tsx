@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '@styles/globals.css';
 import { Header } from '@layout';
+import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: '안녕하세윤',
@@ -12,20 +13,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <head>
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-      </head>
-      <body className="w-screen h-screen selection:bg-sky-600/10">
-        <Header />
-        <main className="w-full h-full">{children}</main>
-      </body>
-    </html>
-  );
-}
+const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => (
+  <html lang="en">
+    <head>
+      <link rel="manifest" href="/favicon/site.webmanifest" />
+    </head>
+    <body className="w-screen h-screen bg-zinc-200 selection:bg-zinc-300">
+      <Header />
+      <main className="w-full h-full">{children}</main>
+    </body>
+  </html>
+);
+
+export default RootLayout;
