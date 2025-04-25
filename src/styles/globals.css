@@ -1,5 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Special+Gothic+Expanded+One&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Manrope:wght@200..800&family=Special+Gothic+Expanded+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Special+Gothic+Expanded+One&display=swap');
 @import 'tailwindcss';
 
 @utility stroke-px {
@@ -23,9 +22,6 @@
 }
 
 @theme {
-  --color-primary: #beff2e;
-  --color-secondary: #e6ffb0;
-  --color-butter: #faecaf;
   --drop-shadow-px: 1px 1px 0 #000000;
   --drop-shadow-2: 2px 2px 0 #000000;
   --drop-shadow-4: 4px 4px 0 #000000;
@@ -34,41 +30,22 @@
   --tracking-tightest: -0.1em;
   --tracking-tightest-ko: -0.2em;
   --font-gothic: 'Special Gothic Expanded One';
-  --font-gruppo: 'Gruppo';
   --font-manrope: 'Manrope';
 
-  --animate-colorShift: colorShift 7s ease-in-out infinite;
-  @keyframes colorShift {
+  --animate-bgColorShift: bgColorShift 7s ease-in-out infinite;
+  @keyframes bgColorShift {
     0%,
     100% {
-      background: #c98f98;
+      background: #94ff6e;
     }
-    90% {
-      background: #af95c2;
-    }
-    80% {
-      background: #95a9c2;
-    }
-    70% {
-      background: #c3d986;
-    }
-    60% {
-      background: #9bbfb9;
+    75% {
+      background: #fcff59;
     }
     50% {
-      background: #a8bf9b;
+      background: #94ff6e;
     }
-    40% {
-      background: #8ac2d4;
-    }
-    30% {
-      background: #9ba4e0;
-    }
-    20% {
-      background: #b49bcc;
-    }
-    10% {
-      background: #d49bbd;
+    25% {
+      background: #47ffdd;
     }
   }
 }
