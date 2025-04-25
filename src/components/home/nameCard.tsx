@@ -1,5 +1,6 @@
 'use client';
 
+import useIsInit from '@/hooks/useIsInit';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
@@ -7,6 +8,8 @@ const PAPER_OVERLAY_STYLE =
   "absolute top-0 left-0 w-full h-full bg-[url('/assets/paper.png')] bg-contain";
 
 export const NameCard = () => {
+  const { isInit } = useIsInit();
+
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
 
@@ -26,6 +29,8 @@ export const NameCard = () => {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
+
+  if (!isInit) return null;
 
   return (
     <div className="perspective-normal active:rotate-1 transition ease-in-out duration-300">
