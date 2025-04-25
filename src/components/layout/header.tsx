@@ -5,12 +5,13 @@ import { motion } from 'framer-motion';
 import { Menu } from '@/components/layout/menu';
 import { MENU } from '@/lib/constants';
 import useIsInit from '@/hooks/useIsInit';
+import { hasNoHeader } from '@/utils/hasNoHeader';
 
 export const Header = () => {
   const { isInit } = useIsInit();
   const pathname = usePathname();
 
-  if (!isInit || pathname.includes('posts')) return null;
+  if (!isInit || hasNoHeader(pathname)) return null;
 
   const currentMenu = MENU.find(({ path }) => path === pathname)?.option ?? 'Not Found';
 
@@ -20,7 +21,7 @@ export const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full select-none">
+    <header className="fixed top-0 z-50 w-full h-20 sm:h-24 select-none">
       {currentMenu !== 'Not Found' && <Menu />}
 
       <h1 className="flex absolute top-2 right-2 text-6xl sm:text-7xl font-manrope font-light tracking-tighter">
