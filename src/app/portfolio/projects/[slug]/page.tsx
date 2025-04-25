@@ -1,7 +1,7 @@
 import { NotReady } from '@/components/common';
 
-const Post = () => {
+const Project = () => {
   return <NotReady></NotReady>;
 };
 
-export default Post;
+export default Project;
