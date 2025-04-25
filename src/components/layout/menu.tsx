@@ -13,7 +13,6 @@ export const Menu = () => {
       {MENU.filter(({ path }) => path !== pathname).map(({ option, path }) => (
         <button
           key={option}
-          // style={{ fontSize, width }}
           onClick={() => router.push(path)}
           className={twMerge(
             'text-3xl sm:text-5xl text-vertical font-manrope font-thin tracking-tighter',
