@@ -32,20 +32,20 @@
   --font-gothic: 'Special Gothic Expanded One';
   --font-manrope: 'Manrope';
 
-  --animate-bgColorShift: bgColorShift 7s ease-in-out infinite;
+  --animate-bgColorShift: bgColorShift 10s ease-in-out infinite;
   @keyframes bgColorShift {
     0%,
     100% {
-      background: #94ff6e;
+      background: #7aff70;
     }
     75% {
-      background: #fcff59;
+      background: #70ffd4;
     }
     50% {
-      background: #94ff6e;
+      background: #70ff8d;
     }
     25% {
-      background: #47ffdd;
+      background: #fff370;
     }
   }
 }
