@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const PAPER_OVERLAY_STYLE =
-  "absolute top-0 left-0 w-full h-full bg-[url('/assets/paper.png')] bg-contain";
+  "absolute top-0 left-0 w-full h-full bg-[url('/assets/paper.png')] bg-cover";
 
 export const NameCard = () => {
   const { isInit } = useIsInit();
