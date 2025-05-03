@@ -1,30 +1,38 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Menu } from '@/components/layout/menu';
 import { MENU } from '@/lib/constants';
 import useIsInit from '@/hooks/useIsInit';
-import { hasNoHeader } from '@/utils/hasNoHeader';
+import { removeFirstO } from '@/utils/removeFirstO';
+import { twMerge } from 'tailwind-merge';
+import Link from 'next/link';
 
 export const Header = () => {
   const { isInit } = useIsInit();
   const pathname = usePathname();
+  const slug = useParams().slug as string;
 
-  if (!isInit || hasNoHeader(pathname)) return null;
+  if (!isInit) return null;
 
-  const currentMenu = MENU.find(({ path }) => path === pathname)?.option ?? 'Not Found';
-
-  const removeFirstO = (string: string) => [
-    string.slice(0, string.indexOf('o')),
-    string.slice(string.indexOf('o') + 1),
-  ];
+  const currentMenu = slug ?? MENU.find(({ path }) => path === pathname)?.option ?? 'Not Found';
 
   return (
-    <header className="fixed top-0 z-50 w-full h-20 sm:h-24 select-none">
-      {currentMenu !== 'Not Found' && <Menu />}
+    <header
+      className={twMerge('fixed top-0 z-50 w-full h-20 sm:h-24 select-none', slug && 'absolute')}
+    >
+      {currentMenu !== 'Not Found' && !slug && <Menu />}
+      {slug && (
+        <Link
+          href={pathname.includes('projects') ? '/portfolio' : '/blog'}
+          className="absolute top-2 left-2 font-manrope text-4xl font-extralight"
+        >
+          &lt;
+        </Link>
+      )}
 
-      <h1 className="flex absolute top-2 right-2 text-6xl sm:text-7xl font-manrope font-light tracking-tighter">
+      <h1 className="flex absolute top-0 right-2 text-[56px] sm:text-7xl font-manrope font-light tracking-tighter">
         <span>{removeFirstO(currentMenu)[0]}</span>
         <motion.span
           className={`z-10 text-white stroke-light -translate-x-0.5`}

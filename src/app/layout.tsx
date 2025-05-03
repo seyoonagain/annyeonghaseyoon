@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: '안녕하세윤',
-  description: '프론트엔드 개발자 정세윤 블로그',
+  description: '프론트엔드 개발자 정세윤입니다.',
   icons: {
     icon: '/favicon/favicon-32x32.png',
     shortcut: '/favicon/favicon.ico',
