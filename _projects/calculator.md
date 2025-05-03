@@ -6,4 +6,5 @@ endedAt: 2024-09-30
 techStack: ['JavaScript']
 github: https://github.com/seyoonagain/calculator
 demo: https://macintosh-calculator.netlify.app
+image: /assets/projects/calculator.png
 ---

@@ -6,6 +6,7 @@ endedAt: 2025-01-16
 techStack: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'motion']
 github: https://github.com/Doreumung/Doreumung-FE
 demo: https://www.doreumung.site
+image: /assets/projects/doreumung.png
 ---
 
 ## Responsibilities
@@ -18,13 +19,13 @@ demo: https://www.doreumung.site
 
 ## Improvements
 
-### **웹소켓 연결 최적화를 통한 리소스 절약**
+### 웹소켓 연결 최적화를 통한 리소스 절약
 
 - **배경**: 여러 컴포넌트에서 각각 웹소켓에 연결되어 불필요한 리소스 사용 증가
 - **방식**: 웹소켓 연결을 전역 상태(`useContext`)로 관리하여 하나의 연결을 여러 컴포넌트에서 공유
 - **성과**: 중복 연결 제거로 성능 최적화 및 네트워크 리소스 절약
 
-### **페이지 접근 제어 최적화**
+### 페이지 접근 제어 최적화
 
 - **배경**: 사용자 인증 및 인가 여부에 따라 접근 제어 필요
 - **방식**:

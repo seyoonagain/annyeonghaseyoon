@@ -8,4 +8,5 @@ export type Project = {
   github: string;
   demo: string;
   content: string;
+  image: string;
 };
