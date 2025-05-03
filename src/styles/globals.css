@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Special+Gothic+Expanded+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Manrope:wght@200..800&family=Special+Gothic+Expanded+One&display=swap');
 @import 'tailwindcss';
 
 @utility stroke-px {
@@ -9,6 +9,10 @@
 @utility stroke-light {
   -webkit-text-stroke: 0.75px #000000;
   text-stroke: 0.75px #000000;
+}
+
+@utility border-light {
+  border-width: 0.75px;
 }
 
 @utility text-vertical {
@@ -31,6 +35,8 @@
   --tracking-tightest-ko: -0.2em;
   --font-gothic: 'Special Gothic Expanded One';
   --font-manrope: 'Manrope';
+  --font-gothicA1: 'Gothic A1';
+  --aspect-project: 16 / 10;
 
   --animate-bgColorShift: bgColorShift 10s ease-in-out infinite;
   @keyframes bgColorShift {
@@ -56,4 +62,37 @@
 
 button {
   @apply cursor-pointer;
+}
+
+/* markdown styles */
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  @apply py-2;
+}
+
+.markdown ul li {
+  @apply relative pl-3 leading-8 before:content-['-'] before:absolute before:left-0;
+}
+
+.markdown ul ul {
+  @apply py-0;
+}
+
+.markdown h2 {
+  @apply pt-12 mb-4 border-b font-manrope font-medium text-3xl tracking-tighter;
+}
+
+.markdown h3 {
+  @apply pt-6 text-xl;
+}
+
+.markdown strong {
+  @apply font-semibold;
+}
+
+.markdown code {
+  @apply px-1 rounded-lg bg-zinc-300 brightness-95;
 }

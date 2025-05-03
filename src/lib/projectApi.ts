@@ -23,5 +23,6 @@ export const getAllProjects = (): Project[] => {
   const projects = slugs
     .map(slug => getProjectBySlug(slug))
     .sort((project1, project2) => (project1.endedAt < project2.endedAt ? -1 : 1));
+
   return projects;
 };
