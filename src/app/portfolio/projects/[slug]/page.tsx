@@ -21,40 +21,38 @@ const Project = async ({ params }: Props) => {
   const content = await markdownToHtml(project.content);
 
   return (
-    <div className="flex flex-col gap-4 w-full max-w-5xl h-full pt-6">
-      <div className="flex flex-col">
-        <div className="flex">
-          <DateFormatter dateString={startedAt} />
-          {'\xa0~\xa0'}
-          <DateFormatter dateString={endedAt} />
-        </div>
-        <div className="flex flex-col w-full font-gothicA1 tracking-tightest">
-          <h2 className="text-3xl">{description}</h2>
-          <p>( {team} )</p>
-        </div>
-      </div>
-
-      <div className="flex gap-8">
-        <section className="flex flex-col tracking-tight">
-          <h3 className="font-manrope font-semibold">TECH STACKS</h3>
-          <ul className="flex flex-col list-none">
-            {techStack.map(tech => (
-              <TechStack key={tech} tech={tech} />
-            ))}
-          </ul>
-        </section>
-
-        <section className="flex flex-col tracking-tight">
-          <h3 className="font-manrope font-semibold">LINKS</h3>
-          <div className="flex flex-col">
-            {[demo, github].map(link => (
-              <Link key={link} link={link} />
-            ))}
+    <div className="flex flex-col gap-4 w-full max-w-7xl h-full pt-6">
+      <div>
+        <div className="flex md:flex flex-col items-start sm:items-center sm:absolute sm:top-1 sm:left-1/2 sm:-translate-x-1/2">
+          <div className="flex leading-5">
+            <DateFormatter dateString={startedAt} />
+            {'\xa0-\xa0'}
+            <DateFormatter dateString={endedAt} />
           </div>
-        </section>
+          <p className="hidden sm:block font-gothicA1 text-sm">( {team} )</p>
+        </div>
+
+        <div className="flex flex-col sm:absolute sm:top-1.5 sm:left-8 w-full font-gothicA1">
+          <h2 className="text-3xl tracking-tighter">{description}</h2>
+          <p className="block sm:hidden font-gothicA1 text-sm">( {team} )</p>
+        </div>
       </div>
 
-      <div className="w-full aspect-project relative right-0 sm:right-1">
+      <div className="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center gap-0 sm:gap-2">
+        <ul className="flex flex-wrap gap-2 w-fit mt-2 list-none">
+          {techStack.map(tech => (
+            <TechStack key={tech} tech={tech} />
+          ))}
+        </ul>
+
+        <div className="flex gap-2">
+          {[demo, github].map(link => (
+            <Link key={link} link={link} />
+          ))}
+        </div>
+      </div>
+
+      <div className="w-full aspect-project relative sm:right-1">
         <div className="w-full h-full absolute top-1 sm:top-2 left-1 sm:left-2 bg-zinc-100 border"></div>
         <Image className="z-10 border bg-white object-cover" src={image} alt={slug} fill priority />
       </div>

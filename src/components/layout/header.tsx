@@ -26,7 +26,7 @@ export const Header = () => {
       {slug && (
         <Link
           href={pathname.includes('projects') ? '/portfolio' : '/blog'}
-          className="absolute top-2 left-2 font-manrope text-4xl font-extralight"
+          className="absolute top-2 sm:top-0 left-2 font-manrope text-4xl font-extralight"
         >
           &lt;
         </Link>
