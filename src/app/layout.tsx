@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import '@styles/globals.css';
-import { Header } from '@layout';
+import { Header, TopButton } from '@layout';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
@@ -18,9 +18,10 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => (
     <head>
       <link rel="manifest" href="/favicon/site.webmanifest" />
     </head>
-    <body className="w-screen h-screen bg-zinc-200 selection:bg-zinc-300">
+    <body className="flex flex-col w-screen h-screen bg-zinc-200 selection:bg-zinc-300">
       <Header />
-      <main className="w-full h-full">{children}</main>
+      <main className="w-full grow">{children}</main>
+      <TopButton />
     </body>
   </html>
 );
