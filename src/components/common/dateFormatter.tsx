@@ -1,12 +1,17 @@
 import { format } from 'date-fns';
+import { twMerge } from 'tailwind-merge';
 
 type Props = {
   dateString: string;
+  className?: string;
 };
 
-export const DateFormatter = ({ dateString }: Props) => {
+export const DateFormatter = ({ dateString, className }: Props) => {
   return (
-    <time className="font-manrope text-sm tracking-tight" dateTime={dateString}>
+    <time
+      className={twMerge('font-manrope text-sm tracking-tight', className)}
+      dateTime={dateString}
+    >
       {format(dateString, 'yyyy.LL.dd')}
     </time>
   );
