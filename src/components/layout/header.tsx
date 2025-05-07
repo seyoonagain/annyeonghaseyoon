@@ -4,24 +4,18 @@ import { useParams, usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Menu } from '@/components/layout/menu';
 import { MENU } from '@/lib/constants';
-import useIsInit from '@/hooks/useIsInit';
-import { removeFirstO } from '@/utils/removeFirstO';
+import { hasO, removeFirstO } from '@/utils/checkO';
 import { twMerge } from 'tailwind-merge';
 import Link from 'next/link';
 
 export const Header = () => {
-  const { isInit } = useIsInit();
   const pathname = usePathname();
   const slug = useParams().slug as string;
-
-  if (!isInit) return null;
 
   const currentMenu = slug ?? MENU.find(({ path }) => path === pathname)?.option ?? 'Not Found';
 
   return (
-    <header
-      className={twMerge('fixed top-0 z-50 w-full h-20 sm:h-24 select-none', slug && 'absolute')}
-    >
+    <header className={twMerge('shrink-0 w-full h-36 sm:h-56 select-none', slug && 'h-24 sm:h-24')}>
       {currentMenu !== 'Not Found' && !slug && <Menu />}
       {slug && (
         <Link
@@ -32,25 +26,34 @@ export const Header = () => {
         </Link>
       )}
 
-      <h1 className="flex absolute top-0 right-2 text-[56px] sm:text-7xl font-manrope font-light tracking-tighter">
+      <h1
+        className={twMerge(
+          'flex fixed top-0 right-2 z-50 text-[56px] sm:text-7xl font-manrope font-light tracking-tighter',
+          slug && 'absolute',
+        )}
+      >
         <span>{removeFirstO(currentMenu)[0]}</span>
-        <motion.span
-          className={`z-10 text-white stroke-light -translate-x-0.5`}
-          animate={{
-            rotateX: [0, 5, -5, 0],
-            rotateY: [0, 200, -200, 0],
-            rotateZ: [0, 10, -10, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            repeatType: 'mirror',
-            ease: 'easeInOut',
-          }}
-        >
-          o
-        </motion.span>
-        <span className="-translate-x-1.5">{removeFirstO(currentMenu)[1]}</span>
+        {hasO(currentMenu) && (
+          <>
+            <motion.span
+              className={`z-10 text-white stroke-light -translate-x-0.5`}
+              animate={{
+                rotateX: [0, 5, -5, 0],
+                rotateY: [0, 200, -200, 0],
+                rotateZ: [0, 10, -10, 0],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                repeatType: 'mirror',
+                ease: 'easeInOut',
+              }}
+            >
+              o
+            </motion.span>
+            <span className="-translate-x-1.5">{removeFirstO(currentMenu)[1]}</span>
+          </>
+        )}
       </h1>
     </header>
   );

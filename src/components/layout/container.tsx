@@ -12,7 +12,7 @@ export const Container = ({ children, className }: Props) => {
   return (
     <div
       className={twMerge(
-        'flex justify-center items-center w-full h-full px-4 pt-20 sm:pt-24 pb-24',
+        'flex justify-center items-center w-full h-full px-4 pt-4 pb-24',
         className,
       )}
     >
