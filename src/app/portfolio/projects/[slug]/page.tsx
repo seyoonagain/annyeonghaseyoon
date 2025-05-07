@@ -1,10 +1,9 @@
 import { Content, DateFormatter } from '@/components/common';
-import { Link } from '@/components/project';
+import { Link, TechStack } from '@/components/project';
 import markdownToHtml from '@/lib/markdownToHtml';
 import { getProjectBySlug } from '@/lib/projectApi';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { TechStack } from '../../../../components/project/techStack';
 
 type Props = {
   params: Promise<{ slug: string }>;
