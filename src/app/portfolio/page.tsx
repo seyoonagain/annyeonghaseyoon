@@ -5,7 +5,7 @@ const Portfolio = () => {
   const projects = getAllProjects();
 
   return (
-    <div className="flex flex-col-reverse sm:flex-row-reverse justify-center w-full sm:max-w-2xl animate-bgColorShift font-manrope">
+    <div className="flex flex-col-reverse sm:flex-row-reverse justify-center w-full sm:max-w-2xl animate-bgColorShift">
       {projects.map(({ description, slug, team }, index) => (
         <Link
           href={`/portfolio/projects/${slug}`}

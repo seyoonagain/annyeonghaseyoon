@@ -8,7 +8,7 @@ export const Link = ({ link }: Props) => {
       key={link}
       href={link}
       target="_blank"
-      className="px-2 py-px border rounded-2xl bg-white font-manrope text-xs sm:text-sm"
+      className="px-2 py-px border rounded-2xl bg-white text-xs sm:text-sm"
     >
       {link.includes('github.com') ? 'GitHub' : 'Demo'}
     </a>

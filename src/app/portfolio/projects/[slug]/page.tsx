@@ -29,12 +29,12 @@ const Project = async ({ params }: Props) => {
             {'\xa0-\xa0'}
             <DateFormatter dateString={endedAt} />
           </div>
-          <p className="hidden sm:block font-gothicA1 text-sm">( {team} )</p>
+          <p className="hidden sm:block text-sm">( {team} )</p>
         </div>
 
-        <div className="flex flex-col sm:absolute sm:top-1.5 sm:left-8 w-full font-gothicA1">
+        <div className="flex flex-col sm:absolute sm:top-1.5 sm:left-8 w-full">
           <h2 className="text-3xl tracking-tighter">{description}</h2>
-          <p className="block sm:hidden font-gothicA1 text-sm">( {team} )</p>
+          <p className="block sm:hidden text-sm">( {team} )</p>
         </div>
       </div>
 

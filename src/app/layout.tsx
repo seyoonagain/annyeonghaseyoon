@@ -18,7 +18,7 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => (
     <head>
       <link rel="manifest" href="/favicon/site.webmanifest" />
     </head>
-    <body className="flex flex-col w-screen h-screen bg-zinc-200 selection:bg-zinc-300">
+    <body className="flex flex-col w-screen h-screen bg-zinc-200 selection:bg-zinc-300 font-manrope">
       <Header />
       <main className="w-full grow">{children}</main>
       <TopButton />

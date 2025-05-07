@@ -20,7 +20,7 @@ export const Header = () => {
       {slug && (
         <Link
           href={pathname.includes('projects') ? '/portfolio' : '/blog'}
-          className="absolute top-2 sm:top-0 left-2 font-manrope text-4xl font-extralight"
+          className="absolute top-2 sm:top-0 left-2 text-4xl font-extralight"
         >
           &lt;
         </Link>
@@ -28,7 +28,7 @@ export const Header = () => {
 
       <h1
         className={twMerge(
-          'flex fixed top-0 right-2 z-50 text-[56px] sm:text-7xl font-manrope font-light tracking-tighter',
+          'flex fixed top-0 right-2 z-50 text-[56px] sm:text-7xl font-light tracking-tighter',
           slug && 'absolute',
         )}
       >

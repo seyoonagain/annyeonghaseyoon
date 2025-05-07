@@ -14,7 +14,7 @@ export const NotReady = () => {
         repeatType: 'reverse',
         ease: 'easeOut',
       }}
-      className="flex justify-center items-center w-full font-manrope italic tracking-tight"
+      className="flex justify-center items-center w-full italic tracking-tight"
     >
       {"I'm working on this page..."}
     </motion.div>

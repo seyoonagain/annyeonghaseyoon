@@ -8,10 +8,7 @@ type Props = {
 
 export const DateFormatter = ({ dateString, className }: Props) => {
   return (
-    <time
-      className={twMerge('font-manrope text-sm tracking-tight', className)}
-      dateTime={dateString}
-    >
+    <time className={twMerge('text-sm tracking-tight', className)} dateTime={dateString}>
       {format(dateString, 'yyyy.LL.dd')}
     </time>
   );

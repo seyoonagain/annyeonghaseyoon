@@ -15,7 +15,7 @@ export const Menu = () => {
           key={option}
           onClick={() => router.push(path)}
           className={twMerge(
-            'w-8 sm:w-12 text-3xl sm:text-5xl text-vertical font-manrope font-thin tracking-tighter',
+            'w-8 sm:w-12 text-3xl sm:text-5xl text-vertical font-thin tracking-tighter',
           )}
         >
           {option}

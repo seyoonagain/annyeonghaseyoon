@@ -30,12 +30,11 @@
   --drop-shadow-2: 2px 2px 0 #000000;
   --drop-shadow-4: 4px 4px 0 #000000;
   --drop-shadow-card: 10px 30px 15px #aaaaaa;
+  --tracking-tight: -0.03em;
   --tracking-tighter: -0.075em;
   --tracking-tightest: -0.1em;
-  --tracking-tightest-ko: -0.2em;
   --font-gothic: 'Special Gothic Expanded One';
-  --font-manrope: 'Manrope';
-  --font-gothicA1: 'Gothic A1';
+  --font-manrope: 'Manrope', 'Gothic A1';
   --aspect-project: 16 / 10;
 
   --animate-bgColorShift: bgColorShift 10s ease-in-out infinite;
@@ -66,6 +65,10 @@ button {
 
 /* markdown styles */
 
+.markdown {
+  @apply tracking-tight;
+}
+
 .markdown p,
 .markdown ul,
 .markdown ol,
@@ -82,7 +85,7 @@ button {
 }
 
 .markdown h2 {
-  @apply pt-12 mb-4 border-b font-manrope font-medium text-3xl tracking-tighter;
+  @apply pt-12 mb-4 border-b font-medium text-3xl tracking-tighter;
 }
 
 .markdown h3 {
