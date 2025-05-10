@@ -32,7 +32,7 @@ const Project = async ({ params }: Props) => {
         </div>
 
         <div className="flex flex-col sm:absolute sm:top-1.5 sm:left-8 w-full">
-          <h2 className="text-3xl tracking-tighter">{description}</h2>
+          <h2 className="text-2xl lg:text-3xl tracking-tighter">{description}</h2>
           <p className="block sm:hidden text-sm">( {team} )</p>
         </div>
       </div>

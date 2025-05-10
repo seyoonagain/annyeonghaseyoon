@@ -1,7 +1,0 @@
-import { NotReady } from '@/components/common';
-
-const Post = () => {
-  return <NotReady></NotReady>;
-};
-
-export default Post;
