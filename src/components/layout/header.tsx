@@ -14,13 +14,15 @@ export const Header = () => {
 
   const currentMenu = slug ?? MENU.find(({ path }) => path === pathname)?.option ?? 'Not Found';
 
+  const isOnDetailPage = (menu: string) => pathname.includes(menu) && slug;
+
   return (
     <header className={twMerge('shrink-0 w-full h-36 sm:h-56 select-none', slug && 'h-24 sm:h-24')}>
       {currentMenu !== 'Not Found' && !slug && <Menu />}
       {slug && (
         <Link
-          href={pathname.includes('projects') ? '/portfolio' : '/blog'}
-          className="absolute top-2 sm:top-0 left-2 text-4xl font-extralight"
+          href={pathname.includes('projects') ? '/projects' : '/posts'}
+          className="absolute top-0 sm:top-0 left-2 text-4xl font-extralight"
         >
           &lt;
         </Link>
@@ -29,7 +31,13 @@ export const Header = () => {
       <h1
         className={twMerge(
           'flex fixed top-0 right-2 z-50 text-[56px] sm:text-7xl font-light tracking-tighter',
-          slug && 'absolute',
+          isOnDetailPage('project') &&
+            'absolute sm:-rotate-z-6 -translate-y-2 sm:translate-y-4 transition ease-in-out',
+          isOnDetailPage('project') && slug.length > 8 && 'md:rotate-z-0 md:translate-y-0',
+          isOnDetailPage('project') &&
+            slug.length > 12 &&
+            'md:-rotate-z-6 md:translate-y-4 xl:rotate-z-0 xl:translate-y-0',
+          isOnDetailPage('posts') && 'hidden',
         )}
       >
         <span>{removeFirstO(currentMenu)[0]}</span>
