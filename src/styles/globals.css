@@ -66,7 +66,7 @@ button {
 /* markdown styles */
 
 .markdown {
-  @apply tracking-tight;
+  @apply tracking-tight leading-8;
 }
 
 .markdown p,
@@ -76,8 +76,16 @@ button {
   @apply py-2;
 }
 
-.markdown ul li {
-  @apply relative pl-3 leading-8 before:content-['-'] before:absolute before:left-0;
+.markdown li {
+  @apply relative;
+}
+
+.markdown ul > li {
+  @apply pl-3 before:content-['-'] before:absolute before:left-0;
+}
+
+.markdown ol > li {
+  @apply pl-1 ml-3 list-decimal;
 }
 
 .markdown ul ul {
@@ -98,4 +106,12 @@ button {
 
 .markdown code {
   @apply px-1 rounded-lg bg-zinc-300 brightness-95;
+}
+
+.markdown blockquote {
+  @apply inline-block px-2 py-0 border border-zinc-500 rounded-xl bg-zinc-300 text-sm leading-7;
+}
+
+.markdown hr {
+  @apply border-dashed;
 }
