@@ -3,7 +3,5 @@ type Props = {
 };
 
 export const Content = ({ html }: Props) => {
-  return (
-    <div className="markdown tracking-tight pb-32" dangerouslySetInnerHTML={{ __html: html }}></div>
-  );
+  return <div className="markdown tracking-tight" dangerouslySetInnerHTML={{ __html: html }}></div>;
 };
