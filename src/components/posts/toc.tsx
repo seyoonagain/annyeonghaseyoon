@@ -11,7 +11,7 @@ export const Toc = async ({ content }: Props) => {
   return (
     <nav className="static lg:fixed lg:top-1/6 lg:right-8 z-10 w-fit p-2 border bg-zinc-100">
       <ul>
-        {tocItems.map(({ text, id, level }, index) => (
+        {tocItems.map(({ text, id, level }) => (
           <li
             key={id}
             className={twMerge(
