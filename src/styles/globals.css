@@ -55,6 +55,10 @@
   }
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 .border {
   @apply border-zinc-950;
 }
@@ -93,11 +97,15 @@ button {
 }
 
 .markdown h2 {
-  @apply pt-12 mb-4 border-b font-medium text-3xl tracking-tighter;
+  @apply pt-12 mb-4 border-b font-medium text-2xl tracking-tighter;
 }
 
 .markdown h3 {
   @apply pt-6 text-xl;
+}
+
+.markdown h4 {
+  @apply pt-4 text-lg;
 }
 
 .markdown strong {
@@ -105,13 +113,29 @@ button {
 }
 
 .markdown code {
-  @apply px-1 rounded-lg bg-zinc-300 brightness-95;
+  @apply px-1 rounded-lg bg-purple-200 text-wrap brightness-90 saturate-50;
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+.markdown pre code {
+  @apply inline-block pl-2 pr-4 py-1.5 border border-zinc-400 rounded-xl bg-zinc-50/70 text-xs sm:text-sm md:text-base leading-7 brightness-100;
+}
+
+.markdown pre {
+  @apply inline-block bg-transparent! py-2;
 }
 
 .markdown blockquote {
-  @apply inline-block px-2 py-0 border border-zinc-500 rounded-xl bg-zinc-300 text-sm leading-7;
+  @apply inline-block px-2 py-0 border border-zinc-500 rounded-xl bg-blue-200/60 text-sm brightness-90 saturate-[30%] leading-7;
 }
 
 .markdown hr {
-  @apply border-dashed;
+  @apply my-3 border-dashed;
+}
+
+.markdown code .line::before {
+  @apply inline-block w-6 mr-4 text-blue-400/90 text-right text-sm;
+  content: counter(step);
+  counter-increment: step;
 }
