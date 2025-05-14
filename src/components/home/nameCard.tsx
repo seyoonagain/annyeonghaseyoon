@@ -63,7 +63,9 @@ export const NameCard = () => {
             Frontend Developer
           </span>
         </p>
-        <pre className="flex items-end grow text-xs tracking-tight leading-5">{`const seyoon: BasicInfo = {\n\tmobile: '+82 10 7567 2005',\n\temail: 'seyoonagain@gmail.com',\n\twebsite: 'annyeonghaseyoon.vercel.app',\n\tgithub: 'seyoonagain',\n\tskills: ['TypeScript', 'React', 'Next.js']\n}`}</pre>
+        <pre className="flex items-end grow text-xs tracking-tight leading-5">
+          {`const seyoon: BasicInfo = {\n\tmobile: '+82 10 7567 2005',\n\temail: 'seyoonagain@gmail.com',\n\twebsite: 'annyeonghaseyoon.vercel.app',\n\tgithub: 'seyoonagain',\n\tskills: ['TypeScript', 'React', 'Next.js']\n}`}
+        </pre>
       </motion.div>
     </div>
   );
