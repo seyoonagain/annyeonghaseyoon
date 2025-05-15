@@ -1,3 +1,4 @@
+/* @import 'highlight.js/styles/github.css'; */
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Manrope:wght@200..800&family=Special+Gothic+Expanded+One&display=swap');
 @import 'tailwindcss';
 
@@ -119,7 +120,7 @@ button {
 }
 
 .markdown pre code {
-  @apply inline-block pl-2 pr-4 py-1.5 border border-zinc-400 rounded-xl bg-zinc-50/70 text-xs sm:text-sm md:text-base leading-7 brightness-100;
+  @apply inline-block px-0 py-3 border border-zinc-400 rounded-xl bg-white text-xs sm:text-sm md:text-base leading-7 brightness-100 saturate-[65%];
 }
 
 .markdown pre {
@@ -138,4 +139,12 @@ button {
   @apply inline-block w-6 mr-4 text-blue-400/90 text-right text-sm;
   content: counter(step);
   counter-increment: step;
+}
+
+.markdown code .line {
+  @apply px-2;
+}
+
+.markdown pre code .highlighted {
+  @apply border-l-2 border-blue-500  bg-blue-100;
 }

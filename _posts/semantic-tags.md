@@ -1,5 +1,5 @@
 ---
-title: '시맨틱 태그'
+title: 시맨틱 태그
 date: 2024-08-31
 tags: ['HTML']
 ---
