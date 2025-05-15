@@ -10,14 +10,20 @@ type Props = {
 };
 
 const Project = async ({ params }: Props) => {
+  console.log('project page started');
+
   const slug = (await params).slug;
+  console.log('got slug from params');
   const project = getProjectBySlug(slug);
+  console.log('got project by slug');
 
   if (!project) return notFound();
 
-  const { team, description, github, demo, techStack, startedAt, endedAt, image } = project;
+  const { team, description, github, demo, techStack, startedAt, endedAt, image, content } =
+    project;
 
-  const content = await markdownToHtml(project.content);
+  const contentHtml = await markdownToHtml(content);
+  console.log('converted to html');
 
   return (
     <div className="flex flex-col gap-4 w-full max-w-7xl h-full pt-6">
@@ -56,7 +62,7 @@ const Project = async ({ params }: Props) => {
         <Image className="z-10 border bg-white object-cover" src={image} alt={slug} fill priority />
       </div>
 
-      <Content html={content} />
+      <Content html={contentHtml} />
     </div>
   );
 };
