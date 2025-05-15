@@ -1,9 +1,9 @@
-// import { Content, DateFormatter } from '@/components/common';
-// import { Link, TechStack } from '@/components/project';
-// import markdownToHtml from '@/lib/markdownToHtml';
-// import { getProjectBySlug } from '@/lib/projectApi';
-// import Image from 'next/image';
-// import { notFound } from 'next/navigation';
+import { Content, DateFormatter } from '@/components/common';
+import { Link, TechStack } from '@/components/project';
+import markdownToHtml from '@/lib/markdownToHtml';
+import { getProjectBySlug } from '@/lib/projectApi';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -13,21 +13,21 @@ const Project = async ({ params }: Props) => {
   console.log('project page started');
 
   const slug = (await params).slug;
-  console.log(slug, 'got slug from params');
-  // const project = getProjectBySlug(slug);
-  // console.log('got project by slug');
+  console.log('got slug from params');
+  const project = getProjectBySlug(slug);
+  console.log('got project by slug');
 
-  // if (!project) return notFound();
+  if (!project) return notFound();
 
-  // const { team, description, github, demo, techStack, startedAt, endedAt, image, content } =
-  //   project;
+  const { team, description, github, demo, techStack, startedAt, endedAt, image, content } =
+    project;
 
-  // const contentHtml = await markdownToHtml(content);
-  // console.log('converted to html');
+  const contentHtml = await markdownToHtml(content);
+  console.log('converted to html');
 
   return (
     <div className="flex flex-col gap-4 w-full max-w-7xl h-full pt-6">
-      {/* <div>
+      <div>
         <div className="flex md:flex flex-col items-start sm:items-center sm:absolute sm:top-1 sm:left-1/2 sm:-translate-x-1/2">
           <div className="flex leading-5">
             <DateFormatter dateString={startedAt} />
@@ -62,7 +62,7 @@ const Project = async ({ params }: Props) => {
         <Image className="z-10 border bg-white object-cover" src={image} alt={slug} fill priority />
       </div>
 
-      <Content html={contentHtml} /> */}
+      <Content html={contentHtml} />
     </div>
   );
 };
