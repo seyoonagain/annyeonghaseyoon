@@ -1,4 +1,4 @@
-import { Content, DateFormatter } from '@/components/common';
+import { Comment, Content, DateFormatter } from '@/components/common';
 import { Toc } from '@/components/posts';
 import { getPostBySlug } from '@/lib/postApi';
 import { notFound } from 'next/navigation';
@@ -32,13 +32,15 @@ const Post = async ({ params }: Props) => {
       <Toc content={content} />
       <Content html={contentHtml} />
 
-      <ul className="flex gap-2 border-t">
+      <ul className="flex gap-2 border-t mb-10">
         {tags.map(tag => (
           <li key={tag} className="text-sm list-none">
             #{tag}
           </li>
         ))}
       </ul>
+
+      <Comment />
     </div>
   );
 };

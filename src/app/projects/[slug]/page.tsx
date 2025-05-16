@@ -1,4 +1,4 @@
-import { Content, DateFormatter } from '@/components/common';
+import { Comment, Content, DateFormatter } from '@/components/common';
 import { Link, TechStack } from '@/components/project';
 import markdownToHtml from '@/lib/markdownToHtml';
 import { getProjectBySlug } from '@/lib/projectApi';
@@ -63,6 +63,9 @@ const Project = async ({ params }: Props) => {
       </div>
 
       <Content html={contentHtml} />
+
+      <hr className="mb-10" />
+      <Comment />
     </div>
   );
 };
