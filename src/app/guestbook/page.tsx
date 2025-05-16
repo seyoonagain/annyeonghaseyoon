@@ -1,4 +1,4 @@
-import { Comment, NotReady } from '@/components/common';
+import { Comment } from '@/components/common';
 
 const Guestbook = () => {
   return (
