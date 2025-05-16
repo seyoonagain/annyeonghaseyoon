@@ -29,13 +29,13 @@ export const PostList = ({ posts }: Props) => {
 
   return (
     <div className="flex flex-col  justify-center items-start gap-4 w-full max-w-7xl h-full pt-4">
-      <ul className="flex items-start gap-2">
+      <ul className="flex items-start gap-2 flex-wrap">
         {tags.map(tag => (
           <li
             key={tag}
             className={twMerge(
               'px-2 border-y bg-white text-sm tracking-tight list-none cursor-pointer',
-              tag === currentTag && 'bg-zinc-950 text-white',
+              tag === currentTag && 'border-zinc-950 bg-zinc-950 text-white',
             )}
             onClick={() => filterByTag(tag)}
           >

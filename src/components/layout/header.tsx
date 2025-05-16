@@ -30,7 +30,7 @@ export const Header = () => {
 
       <h1
         className={twMerge(
-          'flex fixed top-0 right-2 z-50 text-[56px] sm:text-7xl font-light tracking-tighter',
+          'flex fixed -top-2 sm:top-0 right-2 z-50 text-[56px] sm:text-7xl font-light tracking-tighter',
           isOnDetailPage('projects/') &&
             'absolute sm:-rotate-z-6 -translate-y-2 sm:translate-y-4 transition ease-in-out',
           isOnDetailPage('projects/') && slug.length > 8 && 'md:rotate-z-0 md:translate-y-0',
