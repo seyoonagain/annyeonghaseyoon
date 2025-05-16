@@ -9,7 +9,7 @@ export const Toc = async ({ content }: Props) => {
   const tocItems = await extractToc(content);
 
   return (
-    <nav className="static lg:fixed lg:top-1/6 lg:right-8 z-10 w-fit p-2 border bg-zinc-100">
+    <nav className="static lg:fixed lg:top-24 lg:right-8 z-10 w-fit p-2 border bg-zinc-100">
       <ul>
         {tocItems.map(({ text, id, level }) => (
           <li
