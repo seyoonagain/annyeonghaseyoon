@@ -36,7 +36,7 @@ export const Header = () => {
           isOnDetailPage('projects/') && slug.length > 8 && 'md:rotate-z-0 md:translate-y-0',
           isOnDetailPage('projects/') &&
             slug.length > 12 &&
-            'md:-rotate-z-6 md:translate-y-4 xl:rotate-z-0 xl:translate-y-0',
+            'text-5xl top-2 md:top-0 md:-rotate-z-6 md:translate-y-4 xl:rotate-z-0 xl:translate-y-0',
           isOnDetailPage('posts/') && 'hidden',
         )}
       >
