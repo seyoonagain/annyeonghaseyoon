@@ -148,3 +148,7 @@ button {
 .markdown pre code .highlighted {
   @apply pl-1.5 border-l-2 border-blue-500 bg-blue-100/70;
 }
+
+.markdown img {
+  @apply w-full max-w-3xl mx-auto;
+}
