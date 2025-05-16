@@ -12,7 +12,7 @@ export const Header = () => {
   const pathname = usePathname();
   const slug = useParams().slug as string;
 
-  const currentMenu = slug ?? MENU.find(({ path }) => path === pathname)?.option ?? 'Not Found';
+  const currentMenu = slug ?? MENU.find(({ path }) => path === pathname)?.title ?? 'Not Found';
 
   const isOnDetailPage = (menu: string) => pathname.includes(menu) && slug;
 

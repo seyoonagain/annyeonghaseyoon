@@ -1,6 +1,11 @@
-export const MENU = [
-  { option: 'Home', path: '/' },
-  { option: 'Projects', path: '/projects' },
-  { option: 'Posts', path: '/posts' },
-  { option: 'Guestbook', path: '/guestbook' },
+type menuItem = {
+  title: string;
+  path: string;
+};
+
+export const MENU: menuItem[] = [
+  { title: 'Home', path: '/' },
+  { title: 'Projects', path: '/projects' },
+  { title: 'Posts', path: '/posts' },
+  { title: 'Guestbook', path: '/guestbook' },
 ];
