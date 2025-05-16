@@ -114,21 +114,21 @@ button {
 }
 
 .markdown code {
-  @apply px-1 rounded-lg bg-purple-200 text-wrap brightness-90 saturate-50;
+  @apply px-1.5 rounded-lg bg-purple-200 brightness-90 saturate-50;
   counter-reset: step;
   counter-increment: step 0;
 }
 
 .markdown pre code {
-  @apply inline-block px-0 py-3 border border-zinc-400 rounded-xl bg-white text-xs sm:text-sm md:text-base leading-7 brightness-100 saturate-[65%];
+  @apply inline-block px-0 py-3 border border-zinc-400 rounded-xl bg-white text-xs sm:text-sm md:text-base text-wrap leading-7 brightness-100 saturate-[65%];
 }
 
 .markdown pre {
-  @apply inline-block bg-transparent! py-2;
+  @apply inline-block py-2 bg-transparent!;
 }
 
 .markdown blockquote {
-  @apply inline-block px-2 py-0 border border-zinc-500 rounded-xl bg-blue-200/60 text-sm brightness-90 saturate-[30%] leading-7;
+  @apply inline-block px-2 py-0 border border-zinc-500 rounded-xl bg-blue-200/50 text-sm brightness-90 saturate-[30%] leading-7;
 }
 
 .markdown hr {
@@ -136,15 +136,15 @@ button {
 }
 
 .markdown code .line::before {
-  @apply inline-block w-6 mr-4 text-blue-400/90 text-right text-sm;
+  @apply inline-block w-6 mr-4 text-blue-400/80 text-right text-xs sm:text-sm saturate-[70%];
   content: counter(step);
   counter-increment: step;
 }
 
 .markdown code .line {
-  @apply px-2;
+  @apply pl-2 pr-4;
 }
 
 .markdown pre code .highlighted {
-  @apply border-l-2 border-blue-500  bg-blue-100;
+  @apply pl-1.5 border-l-2 border-blue-500 bg-blue-100/70;
 }
