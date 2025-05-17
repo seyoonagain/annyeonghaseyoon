@@ -36,11 +36,11 @@ export const NameCard = () => {
     <div className="perspective-normal active:rotate-1 transition ease-in-out duration-300">
       <motion.div
         animate={{ rotateX, rotateY }}
-        className="flex flex-col relative w-96 h-56 p-2 bg-zinc-600 drop-shadow-card"
+        className="flex flex-col relative w-96 h-56 p-2 bg-zinc-400 text-zinc-900 drop-shadow-card"
       >
         <div className={`${PAPER_OVERLAY_STYLE} -z-10 opacity-40`} />
         <div className={`${PAPER_OVERLAY_STYLE} z-10 opacity-20`} />
-        <p className="flex items-center text-black text-2xl font-bold font-gothic tracking-tighter">
+        <p className="flex items-center text-2xl font-bold font-gothic tracking-tighter">
           <span>SE-Y</span>
           <motion.span
             className="-translate-x-0.5"
