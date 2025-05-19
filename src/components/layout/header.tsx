@@ -33,10 +33,10 @@ export const Header = () => {
           'flex fixed -top-2 sm:top-0 right-2 z-50 text-[56px] sm:text-7xl font-light tracking-tighter',
           isOnDetailPage('projects/') &&
             'absolute sm:-rotate-z-6 -translate-y-2 sm:translate-y-4 transition ease-in-out',
-          isOnDetailPage('projects/') && slug.length > 8 && 'md:rotate-z-0 md:translate-y-0',
+          isOnDetailPage('projects/') && slug.length > 8 && 'lg:rotate-z-0 lg:translate-y-0',
           isOnDetailPage('projects/') &&
             slug.length > 12 &&
-            'text-5xl top-2 md:top-0 md:-rotate-z-6 md:translate-y-4 xl:rotate-z-0 xl:translate-y-0',
+            'text-5xl sm:text-6xl lg:text-7xl top-2 md:top-0 lg:-rotate-z-6 lg:translate-y-4 xl:rotate-z-0 xl:translate-y-0',
           isOnDetailPage('posts/') && 'hidden',
         )}
       >
