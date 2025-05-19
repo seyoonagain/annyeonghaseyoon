@@ -10,12 +10,8 @@ type Props = {
 };
 
 const Project = async ({ params }: Props) => {
-  console.log('project page started');
-
   const slug = (await params).slug;
-  console.log('got slug from params');
   const project = getProjectBySlug(slug);
-  console.log('got project by slug');
 
   if (!project) return notFound();
 
@@ -23,7 +19,6 @@ const Project = async ({ params }: Props) => {
     project;
 
   const contentHtml = await markdownToHtml(content);
-  console.log('converted to html');
 
   return (
     <div className="flex flex-col gap-4 w-full max-w-7xl h-full pt-6">
