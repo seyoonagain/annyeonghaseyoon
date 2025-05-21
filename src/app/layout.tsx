@@ -15,10 +15,12 @@ export const metadata: Metadata = {
 };
 
 const gothicA1 = Gothic_A1({
+  subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 const manrope = Manrope({
+  subsets: ['latin'],
   fallback: ['Gothic A1'],
   variable: '--font-manrope',
   weight: ['200', '300', '400', '500', '600', '700', '800'],
@@ -26,6 +28,7 @@ const manrope = Manrope({
 });
 
 const redHatDisplay = Red_Hat_Display({
+  subsets: ['latin'],
   variable: '--font-redHatDisplay',
   weight: '900',
 });
