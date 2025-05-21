@@ -17,6 +17,7 @@ export const Menu = () => {
           className={twMerge(
             'w-8 sm:w-12 text-3xl sm:text-5xl text-vertical font-thin tracking-tighter',
           )}
+          aria-label={`Got to ${title} page`}
         >
           {title}
         </button>

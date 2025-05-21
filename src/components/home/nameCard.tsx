@@ -40,7 +40,7 @@ export const NameCard = () => {
       >
         <div className={`${PAPER_OVERLAY_STYLE} -z-10 opacity-40`} />
         <div className={`${PAPER_OVERLAY_STYLE} z-10 opacity-20`} />
-        <p className="flex items-center text-2xl font-bold font-gothic tracking-tighter">
+        <p className="flex items-center text-2xl font-bold font-redHatDisplay tracking-tighter">
           <span>SE-Y</span>
           <motion.span
             className="-translate-x-0.5"

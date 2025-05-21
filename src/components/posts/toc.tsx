@@ -1,16 +1,16 @@
-import extractToc from '@/lib/extractToc';
+'use client';
+
+import { TocItem } from '@/lib/extractToc';
 import { twMerge } from 'tailwind-merge';
 
 type Props = {
-  content: string;
+  tocItems: TocItem[];
 };
 
-export const Toc = async ({ content }: Props) => {
-  const tocItems = await extractToc(content);
-
+export const Toc = ({ tocItems }: Props) => {
   return (
     <nav className="static lg:fixed lg:top-24 lg:right-8 z-20 w-fit p-2 border bg-zinc-100">
-      <ul>
+      <ol>
         {tocItems.map(({ text, id, level }) => (
           <li
             key={id}
@@ -32,7 +32,7 @@ export const Toc = async ({ content }: Props) => {
             </a>
           </li>
         ))}
-      </ul>
+      </ol>
     </nav>
   );
 };

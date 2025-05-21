@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const Tags = ({ posts, currentTag, setCurrentTag, setFilteredPosts }: Props) => {
-  const tags = [...new Set(posts.flatMap(post => post.tags))];
+  const tags = [...new Set((posts).flatMap(post => post.tags))];
 
   const filterByTag = (tag: string) => {
     if (tag === currentTag) {

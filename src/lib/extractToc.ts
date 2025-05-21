@@ -1,7 +1,7 @@
 import { remark } from 'remark';
 import { visit } from 'unist-util-visit';
 
-type TocItem = {
+export type TocItem = {
   id: string;
   text: string;
   level: number;
