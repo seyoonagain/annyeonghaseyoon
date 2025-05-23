@@ -2,7 +2,6 @@
 
 import { MENU } from '@/lib/constants';
 import { usePathname, useRouter } from 'next/navigation';
-import { twMerge } from 'tailwind-merge';
 
 export const Menu = () => {
   const router = useRouter();
@@ -14,9 +13,7 @@ export const Menu = () => {
         <button
           key={title}
           onClick={() => router.push(path)}
-          className={twMerge(
-            'w-8 sm:w-12 text-3xl sm:text-5xl text-vertical font-thin tracking-tighter',
-          )}
+          className="w-8 sm:w-12 text-3xl sm:text-5xl text-vertical font-thin tracking-tighter"
           aria-label={`Got to ${title} page`}
         >
           {title}
