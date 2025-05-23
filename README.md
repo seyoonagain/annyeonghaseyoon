@@ -27,9 +27,6 @@ A blog where I document my development journey and studies.
   <img src="https://img.shields.io/badge/remark-000000?style=for-the-badge&logo=remark&logoColor=ffffff">
   <img src="https://img.shields.io/badge/rehype-000000?style=for-the-badge">
 
-- **State Management**  
-  <img src="https://img.shields.io/badge/zustand-000000?style=for-the-badge">
-
 - **Animation**  
   <img src="https://img.shields.io/badge/framer_motion-000000?style=for-the-badge&logo=framer&logoColor=0055FF">
 
