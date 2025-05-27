@@ -33,10 +33,10 @@ export const NameCard = () => {
   if (!isInit) return null;
 
   return (
-    <div className="perspective-normal active:rotate-1 transition ease-in-out duration-300">
+    <div className="w-full max-w-96 px-4 perspective-normal active:rotate-1 transition ease-in-out duration-300">
       <motion.div
         animate={{ rotateX, rotateY }}
-        className="flex flex-col relative w-96 h-56 p-2 bg-zinc-400 text-zinc-900 drop-shadow-card"
+        className="flex flex-col relative w-full h-56 p-2 bg-zinc-400 text-zinc-900 drop-shadow-card"
       >
         <div className={`${PAPER_OVERLAY_STYLE} -z-10 opacity-40`} />
         <div className={`${PAPER_OVERLAY_STYLE} z-10 opacity-20`} />
