@@ -4,6 +4,7 @@ import { getPostBySlug } from '@/lib/postApi';
 import { notFound } from 'next/navigation';
 import markdownToHtml from '@/lib/markdownToHtml';
 import extractToc from '@/lib/extractToc';
+import { twMerge } from 'tailwind-merge';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -23,13 +24,17 @@ const Post = async ({ params }: Props) => {
 
   return (
     <div className="flex flex-col gap-4 w-full max-w-7xl h-full pt-6">
-      <h1 className="absolute top-0 right-2 text-4xl sm:text-5xl md:text-6xl tracking-tightest">
+      <h1
+        className={twMerge(
+          'absolute top-0 left-10 text-4xl sm:text-5xl md:text-6xl tracking-tightest transition ease-in-out',
+        )}
+      >
         {title}
       </h1>
 
       <DateFormatter
         dateString={date}
-        className="absolute top-10 sm:top-12 md:top-16 lg:top-0 right-2 lg:right-1/2 lg:translate-x-1/2"
+        className="absolute top-10 sm:top-12 md:top-16 lg:top-2 right-2"
       />
 
       <Toc tocItems={tocItems} />
