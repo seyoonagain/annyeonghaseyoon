@@ -82,7 +82,7 @@ button {
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-  @apply py-2;
+  @apply my-2;
 }
 
 .markdown li {
@@ -94,7 +94,7 @@ button {
 }
 
 .markdown ol > li {
-  @apply pl-1 ml-3 list-decimal;
+  @apply pl-1 py-1 ml-3 list-decimal;
 }
 
 .markdown ul ul {
@@ -102,11 +102,11 @@ button {
 }
 
 .markdown h2 {
-  @apply bg-zinc-200 mt-12 border-b font-medium text-2xl tracking-tighter;
+  @apply bg-zinc-200 mt-12 mb-4 border-b font-medium text-2xl tracking-tighter;
 }
 
 .markdown h3 {
-  @apply mt-4 text-xl;
+  @apply my-4 text-xl;
 }
 
 .markdown h4 {
