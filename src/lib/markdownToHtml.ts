@@ -1,11 +1,13 @@
-import { remark } from 'remark';
-import remarkRehype from 'remark-rehype';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
-import rehypePrettyCode from 'rehype-pretty-code';
+import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
+import remarkRehype from 'remark-rehype';
 
 const markdownToHtml = async (markdown: string): Promise<string> => {
   const result = await remark()
+    .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypePrettyCode, {

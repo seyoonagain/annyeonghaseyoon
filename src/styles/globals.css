@@ -156,3 +156,20 @@ button {
 .markdown img {
   @apply w-full max-w-3xl mx-auto;
 }
+
+.markdown table {
+  @apply border text-sm md:text-base;
+}
+
+.markdown th {
+  @apply border-b-4 border-double;
+}
+
+.markdown tr {
+  @apply overflow-x-auto not-last:border-b border-dotted md:not-last:border-b-0;
+}
+
+.markdown th,
+.markdown td {
+  @apply shrink-0 px-1 sm:px-4 py-1 border-l text-center;
+}
